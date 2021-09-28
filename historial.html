@@ -31,30 +31,31 @@
 		&nbsp;&nbsp; Historial
 		</a>
 
-		<div class="verification">
-			<br> 
-				Ver recorrido del automóvil &nbsp;&nbsp; <input type="checkbox" name="miCheck">
-			<br> 
-		</div>
-
-		<div class="text">
+		<div class="datetime">
 			<hr></hr>
-			<b style="font-size: 18px;">DATOS ACTUALES
-				<div class="marker">
-					<img src="marker.png" class="img-fluid" style="width:20px; height: 20px; float: right;">
-		  		</div>
-			</b>
-			<br></br>
-			Longitud = <p id="Longitud"></p>
-			Latitud = <p id="Latitud"></p>
-			Fecha = <p id="Fecha"></p>
-			Hora = <p id="Hora"></p>
+			<br>
+				<b style="font-size: 18px;">Selecciona la fecha y hora inicial de filtrado:
+					<br>				
+						<input type="datetime-local" id="timestamp" style="width: 210px;" data-date-format="DD MMMM YYYY, h:mm:ss">
+					</br>
+				</b>
+			</br>
+			<br>
+				<b style="font-size: 18px;">Selecciona la fecha y hora final de filtrado:
+					<br>				
+						<input type="datetime-local" id="timestamp" style="width: 210px;" data-date-format="DD MMMM YYYY, h:mm:ss">
+					</br>
+				</b>
+			</br>
+			<br>			
+				<button class="searchbtn" id="searchDateTime">Buscar&#128270;</button>
+			</br>
 		</div>
 		
     </div>  
 
 	<div id="main" class="main">
-		<button class="openbtn" onclick="openNav()">&#9776; Abrir Menú</button>
+		<button class="openbtn" id="openButton" onclick="openNav()">&#9776; Abrir Menú</button>
 		<div id="map"></div>
 
 		<script type="text/javascript">
@@ -78,12 +79,14 @@
 	function openNav() {
   		document.getElementById("mySidebar").style.width = "250px";
  		document.getElementById("main").style.marginLeft = "250px";
+		document.getElementById("openButton").style.display = "none";
 		}
 
 /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
 	function closeNav() {
 		document.getElementById("mySidebar").style.width = "0";
 		document.getElementById("main").style.marginLeft = "0";
+		document.getElementById("openButton").style.display = "block";
 	}
 
 	$(document).ready(function(){
