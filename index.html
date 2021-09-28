@@ -34,12 +34,12 @@
 		<div class="verification">
 			<br> 
 				Ver recorrido del automóvil &nbsp;&nbsp; <input type="checkbox" name="miCheck">
-			<br> 
+			</br> 
 		</div>
 
 		<div class="text">
 			<hr></hr>
-			<b style="font-size: 18px;">DATOS ACTUALES
+			<b style="font-size: 18px;">ÚLTIMA UBICACIÓN
 				<div class="marker">
 					<img src="marker.png" class="img-fluid" style="width:20px; height: 20px; float: right;">
 		  		</div>
@@ -54,7 +54,7 @@
     </div>  
 
 	<div id="main" class="main">
-		<button class="openbtn" onclick="openNav()">&#9776; Abrir Menú</button>
+		<button class="openbtn" id="openButton" onclick="openNav()">&#9776; Abrir Menú</button>
 		<div id="map"></div>
 
 		<script type="text/javascript">
@@ -78,12 +78,14 @@
 	function openNav() {
   		document.getElementById("mySidebar").style.width = "250px";
  		document.getElementById("main").style.marginLeft = "250px";
+		document.getElementById("openButton").style.display = "none";
 		}
 
 /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
 	function closeNav() {
 		document.getElementById("mySidebar").style.width = "0";
 		document.getElementById("main").style.marginLeft = "0";
+		document.getElementById("openButton").style.display = "block";
 	}
 
 	$(document).ready(function(){
