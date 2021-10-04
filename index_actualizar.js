@@ -35,7 +35,8 @@
 				url: "consulta_historico.php",
 				data: {startDate: picker.startDate, endDate: picker.endDate}
 			 }).done(function(response){
-				 // Do something with response here
+				 console.log(startDate);
+				 console.log(endDate);				 
 				 console.log(response);
 			 }).fail(function (error) {
 				 // And handle errors here
