@@ -30,7 +30,7 @@
 			$.ajax({
 			  method: "POST",
 			  url: "consulta_historico.php",
-			  data: {startDate: picker.startDate, endDate: picker.endDate}
+			  data: {startDate: picker.startDate.format('YYYY-MM-DD hh:mm:ss'), endDate: picker.endDate.format('YYYY-MM-DD hh:mm:ss')}
 		   }).done(function(response){
 			   // Do something with response here
 			   console.log(response);
