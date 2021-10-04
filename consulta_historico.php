@@ -1,5 +1,6 @@
 <?php
 include("Conexion.php"); 
-	$Date=$_POST["dateTimes"]
+	$Date= $_POST["dateTimes"]
+	echo $Date
 }	
 ?>
