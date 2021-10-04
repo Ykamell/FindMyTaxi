@@ -33,7 +33,7 @@
 
 		<div class="verification">
 			<br> 
-				Ver recorrido del automóvil &nbsp;&nbsp; <input type="checkbox" name="miCheck">
+				Ver recorrido del automóvil &nbsp;&nbsp; <input type="checkbox" name="miCheck" id="miCheck">
 			</br> 
 		</div>
 
@@ -45,10 +45,35 @@
 		  		</div>
 			</b>
 			<br></br>
-			Longitud = <p id="Longitud"></p>
-			Latitud = <p id="Latitud"></p>
-			Fecha = <p id="Fecha"></p>
-			Hora = <p id="Hora"></p>
+			<table border="2" align="center">
+				<tr>
+					<td>
+						<b>Latitud<b>
+					</td>
+					<td id="Latitud"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<b>Longitud<b>
+					</td>
+					<td id="Longitud"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<b>Fecha<b>
+					</td>
+					<td id="Fecha"></td>
+				</tr>
+
+				<tr>
+					<td>
+						<b>Hora<b>
+					</td>
+					<td id="Hora"></td>
+				</tr>
+			</table>	
 		</div>
 		
     </div>  
@@ -57,58 +82,12 @@
 		<button class="openbtn" id="openButton" onclick="openNav()">&#9776; Abrir Menú</button>
 		<div id="map"></div>
 
-		<script type="text/javascript">
-			var Latitud='0';
-			var Longitud='0';
-			var start = true;			
-			var map = L.map('map').setView([Latitud,Longitud],16);
-			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
-			}).addTo(map);
-			var myMarker = L.marker([Latitud, Longitud]).addTo(map).bindPopup('My location')
-				.openPopup();
-			var myMarker = L.marker([Latitud, Longitud]).addTo(map);
-			var polyline = L.polyline([]).addTo(map)
+		<script src="crear_mapa_index.js">
 		</script>	
 	</div>
 </body>
 </html>
 
-<script type="text/javascript">
-	function openNav() {
-  		document.getElementById("mySidebar").style.width = "250px";
- 		document.getElementById("main").style.marginLeft = "250px";
-		document.getElementById("openButton").style.display = "none";
-		}
-
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-	function closeNav() {
-		document.getElementById("mySidebar").style.width = "0";
-		document.getElementById("main").style.marginLeft = "0";
-		document.getElementById("openButton").style.display = "block";
-	}
-
-	$(document).ready(function(){
-		setInterval(
-				function(){
-					$('#Latitud').load('Latitud.php');
-					$('#Longitud').load('Longitud.php');
-					$('#Fecha').load('Fecha.php');
-					$('#Hora').load('Hora.php');
-					var Latitud=parseFloat($('#Latitud').text());
-					var Longitud= parseFloat($('#Longitud').text());
-					if (start){
-                	markery = new L.marker([Latitud, Longitud]).addTo(map);
-                	start = false;
-           			}
-
-					map.setView([Latitud,Longitud]);
-					var newLatLng = new L.LatLng(Latitud, Longitud);
-    					myMarker.setLatLng(newLatLng); 		
-					polyline.addLatLng([Latitud,Longitud])	
-					//map.fitBounds(polyline.getBounds());
-				},1500
-			);			
-	});
+<script src="index_actualizar.js">
 
 </script>
