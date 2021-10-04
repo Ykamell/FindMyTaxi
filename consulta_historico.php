@@ -1,6 +1,6 @@
 <?php
 include("Conexion.php"); 
-	$Date= $_POST["dateTimes"]
-	echo $Date
+	echo json_encode($_POST['data']
+	echo json_encode($_POST['startDate']
 }	
 ?>
