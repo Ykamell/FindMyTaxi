@@ -30,18 +30,10 @@
 		$('input[name="datetimes"]').on('apply.daterangepicker', function(ev, picker) {
 			$(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
 			console.log(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-			$.ajax({
-				method: "POST",
-				url: "consulta_historico.php",
-				data: {startDate: picker.startDate, endDate: picker.endDate}
-			 }).done(function(response){
-				 console.log(startDate);
-				 console.log(endDate);				 
-				 console.log(response);
-			 }).fail(function (error) {
-				 // And handle errors here
-				 console.log(error);
-			 });
+			$.post('consulta_historico.php', {startDate: picker.startDate.format('MM/DD/YYYY'), endDate: picker.endDate.format('MM/DD/YYYY')}, function(data) {
+				console.log(data);
+			});
+
 		});
 	  
 		$('input[name="datetimes"]').on('cancel.daterangepicker', function(ev, picker) {
