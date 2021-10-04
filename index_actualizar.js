@@ -25,20 +25,27 @@
     	  	minYear: 1901,
     		maxYear: parseInt(moment().format('YYYY'),10)
 		  
-		},
-		function(ev, picker) {
+		});	 
+		
+		$('input[name="datetimes"]').on('apply.daterangepicker', function(ev, picker) {
+			$(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
 			$.ajax({
-			  method: "POST",
-			  url: "consulta_historico.php",
-			  data: {startDate: picker.startDate.format('YYYY-MM-DD hh:mm:ss'), endDate: picker.endDate.format('YYYY-MM-DD hh:mm:ss')}
-		   }).done(function(response){
-			   // Do something with response here
-			   console.log(response);
-		   }).fail(function (error) {
-			   // And handle errors here
-			   console.log(error);
-		   });
-		});	
+				method: "POST",
+				url: "consulta_historico.php",
+				data: {startDate: picker.startDate, endDate: picker.endDate}
+			 }).done(function(response){
+				 // Do something with response here
+				 console.log(response);
+			 }).fail(function (error) {
+				 // And handle errors here
+				 console.log(error);
+			 });
+		});
+	  
+		$('input[name="datetimes"]').on('cancel.daterangepicker', function(ev, picker) {
+			$(this).val('');
+		});
+	  
 	});
 
 
