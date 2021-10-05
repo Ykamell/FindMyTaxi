@@ -1,6 +1,6 @@
 <?php
 include("Conexion.php"); 
-if(isset($_POST["startDate"]) && $_POST["endDate"]) {
+if(isset($_POST["startDate"] && $_POST["endDate"]) {
 	$startDate = strval($_POST['startDate']);
 	$endDate = strval($_POST['endDate']);
 	echo $startDate;
