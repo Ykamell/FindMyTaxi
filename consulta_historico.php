@@ -1,6 +1,6 @@
 <?php
 include("Conexion.php"); 
-$startDate = strtotime($_POST['startDate']);
-$endDate = strtotime($_POST['endDate']);
+$startDate = $_POST['startDate'];
+$endDate = $_POST['endDate'];
 echo($startDate);
 ?>
