@@ -31,7 +31,7 @@ function enviarDatos(){
 }
 
 	function onMapClick(e) {
-		var checkBox = document.getElementById(“miCheckUbication”);
+		var checkBox = document.getElementById("miCheckUbication");
 		if (checkBox.checked == true){
 			var latlon_click=e.latlng;
 			var min=5;
