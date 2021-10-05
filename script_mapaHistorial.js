@@ -9,7 +9,7 @@ function enviarDatos(){
 	e.preventDefault(); //Previene que la pagina se recargue
 	var frm = $("#frm").serialize();
 	$.ajax({
-		"method": "GET",
+		"method": "POST",
 		"url": "consulta_historico.php",
 		"data": frm,
 	}).done(function(LatLon){
