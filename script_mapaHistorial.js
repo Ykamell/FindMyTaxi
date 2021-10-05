@@ -20,7 +20,8 @@ function enviarDatos(){
 		var final=new L.LatLng(latlon[latlon.length -1][0],latlon[latlon.length -1][1]);
 		 markery.setLatLng(final).bindPopup('Ubicación final').openPopup();
 		polyline.setLatLngs(latlon);
-		map.fitBounds(polyline.getBounds());	
+		map.fitBounds(polyline.getBounds());
+		map.on('click', onMapClick);
 	}).fail( function(xhr, textStatus, errorThrown) {
 		console.log("Error");
         	console.log(xhr.responseText);
