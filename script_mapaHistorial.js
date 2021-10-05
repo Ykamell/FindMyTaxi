@@ -11,7 +11,8 @@ function enviarDatos(){
 	$.ajax({
 		"method": "POST",
 		"url": "consulta_historico.php",
-		"data": frm
+		"data": frm,
+		console.log(frm)
 	}).done(function(LatLon){
 		latlon = JSON.parse(LatLon);
 		console.log(latlon);
