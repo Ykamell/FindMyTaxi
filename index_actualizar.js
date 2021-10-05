@@ -28,8 +28,8 @@
 		});	 
 		
 		$('input[name="datetimes"]').on('apply.daterangepicker', function(ev, picker) {
-			$(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-			console.log(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+			$(this).val(picker.startDate.format('YYYY-MM-DD hh:mm:ss') + ' - ' + picker.endDate.format('YYYY-MM-DD hh:mm:ss'));
+			console.log(picker.startDate.format('YYYY-MM-DD hh:mm:ss') + ' - ' + picker.endDate.format('YYYY-MM-DD hh:mm:ss'));
 			$.post('consulta_historico.php', {startDate: picker.startDate.format('MM/DD/YYYY'), endDate: picker.endDate.format('MM/DD/YYYY')}, function(data) {
 				console.log(data);
 			});
