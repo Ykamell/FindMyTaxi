@@ -1,6 +1,5 @@
 <?php
 include("Conexion.php"); 
-if(isset($_POST["startDate"] && $_POST["endDate"]) {
 	$startDate = strval($_POST['startDate']);
 	$endDate = strval($_POST['endDate']);
 	echo $startDate;
@@ -11,6 +10,5 @@ if(isset($_POST["startDate"] && $_POST["endDate"]) {
 			$poly[]=array((float) $consulta['lat'],(float) $consulta['lon'],(string) $consulta['dateTime']);		
 		}
 		echo json_encode($poly);
-}
 
 ?>
