@@ -1,8 +1,8 @@
 <?php
 include("Conexion.php"); 
-$start_Date = strval($_POST['startDate']);
-$end_Date = strval($_POST['endDate']);
-echo $start_Date;
+$startDate = strval($_POST['startDate']);
+$endDate = strval($_POST['endDate']);
+echo $startDate;
 echo " ";
 echo $endDate;
 $historical = mysqli_query($connection,"SELECT * FROM location WHERE dateTime>=$startDate AND dateTime<=$endDate ORDER BY ID ASC");
