@@ -2,10 +2,12 @@
 include("Conexion.php"); 
 $startDate = strval($_POST['startDate']);
 $endDate = strval($_POST['endDate']);
+$date_i = intval(preg_replace('/[^0-9]+/', '', $startDate), 10); 
+$date_f = intval(preg_replace('/[^0-9]+/', '', $endDate), 10);
 echo $startDate;
 echo " ";
 echo $endDate;
-$historical = mysqli_query($connection,"SELECT * FROM location WHERE dateTime>=$startDate AND dateTime<=$endDate ORDER BY ID ASC");
+$historical = mysqli_query($connection,"SELECT * FROM location WHERE dateTime>=$date_i AND dateTime<=$date_f ORDER BY ID ASC");
 while($consulta=mysqli_fetch_array($historical)){
 	$poly[]=array((float) $consulta['lat'],(float) $consulta['lon'],(string) $consulta['dateTime']);		
 }
