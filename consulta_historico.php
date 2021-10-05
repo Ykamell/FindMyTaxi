@@ -1,7 +1,7 @@
 <?php
 include("Conexion.php"); 
-$startDate = $_POST['startDate'];
-$endDate = $_POST['endDate'];
+$startDate = strval($_POST['startDate']);
+$endDate = strval($_POST['endDate']);
 echo $startDate;
 echo " ";
 echo $endDate;
