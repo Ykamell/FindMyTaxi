@@ -30,7 +30,7 @@
 		$('input[name="datetimes"]').on('apply.daterangepicker', function(ev, picker) {
 			$(this).val(picker.startDate.format('YYYY-MM-DD hh:mm:ss') + ' - ' + picker.endDate.format('YYYY-MM-DD hh:mm:ss'));
 			console.log(picker.startDate.format('YYYY-MM-DD hh:mm:ss') + ' - ' + picker.endDate.format('YYYY-MM-DD hh:mm:ss'));
-			$.post('consulta_historico.php', {startDate: picker.startDate.format('MM/DD/YYYY'), endDate: picker.endDate.format('MM/DD/YYYY')}, function(data) {
+			$.post('consulta_historico.php', {startDate: picker.startDate.format('YYYY-MM-DD hh:mm:ss'), endDate: picker.endDate.format('YYYY-MM-DD hh:mm:ss')}, function(data) {
 				console.log(data);
 			});
 
