@@ -13,6 +13,9 @@ function enviarDatos(){
 		"url": "consulta_historico.php",
 		"data": frm,
 	}).done(function(LatLon1){
+		console.log(typeof latlon);
+		console.log(latlon);
+		console.log("Abraham Kamell");
 		latlon = JSON.parse(LatLon1);
 		console.log(latlon);
 		var inicial=new L.LatLng(latlon[0][0],latlon[0][1]);
