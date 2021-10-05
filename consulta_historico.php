@@ -13,5 +13,6 @@ if(isset($_POST["startDate"] && $_POST["endDate"]) {
 		echo json_encode($poly);
 } else {
 	echo "error";
+}
 
 ?>
