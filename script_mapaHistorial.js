@@ -13,10 +13,15 @@ function enviarDatos(){
 		"url": "consulta_historico.php",
 		"data": frm,
 	}).done(function(LatLon1){
-		console.log(typeof LatLon1);
-		console.log(LatLon1);
-		console.log("Abraham Kamell");
-		// latlon = JSON.parse(LatLon1);	
+		latlon = JSON.parse(LatLon1);
+		console.log(latlon);
+		var inicial=new L.LatLng(latlon[0][0],latlon[0][1]);
+		myMarker.setLatLng(inicial).bindPopup('Ubicación inicial').openPopup();
+		var final=new L.LatLng(latlon[latlon.length -1][0],latlon[latlon.length -1][1]);
+		 markery.setLatLng(final).bindPopup('Ubicación final').openPopup();
+		polyline.setLatLngs(latlon);
+		map.fitBounds(polyline.getBounds());	
+		map.on('click', onMapClick);	
 	}).fail( function(xhr, textStatus, errorThrown) {
 		console.log("Error");
         	console.log(xhr.responseText);
