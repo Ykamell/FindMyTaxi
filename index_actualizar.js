@@ -16,6 +16,7 @@
 			timePicker: true,
 			timePickerSeconds: true,
 			autoUpdateInput: false,
+			timePicker24Hour: true,
 			opens: 'right',
 			startDate: moment().startOf('hour'),
 			endDate: moment().startOf('hour').add(32, 'hour'),
