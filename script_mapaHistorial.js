@@ -9,10 +9,9 @@ function enviarDatos(){
 	e.preventDefault(); //Previene que la pagina se recargue
 	var frm = $("#frm").serialize();
 	$.ajax({
-		"method": "POST",
+		"method": "GET",
 		"url": "consulta_historico.php",
 		"data": frm,
-		console.log(frm)
 	}).done(function(LatLon){
 		latlon = JSON.parse(LatLon);
 		console.log(latlon);
