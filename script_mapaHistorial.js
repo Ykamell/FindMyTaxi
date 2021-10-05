@@ -13,8 +13,8 @@ function enviarDatos(){
 		"url": "consulta_historico.php",
 		"data": frm,
 	}).done(function(LatLon1){
-		console.log(typeof latlon);
-		console.log(latlon);
+		console.log(typeof LatLon1);
+		console.log(LatLon1);
 		console.log("Abraham Kamell");
 		latlon = JSON.parse(LatLon1);
 		console.log(latlon);
