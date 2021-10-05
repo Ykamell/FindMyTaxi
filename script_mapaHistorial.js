@@ -13,7 +13,7 @@ function enviarDatos(){
 		"url": "consulta_historico.php",
 		"data": frm
 	}).done(function(LatLon){
-		latlon = LatLon;
+		latlon = JSON.parse(LatLon);
 		console.log(latlon);
 		var inicial=new L.LatLng(latlon[0][0],latlon[0][1]);
 		myMarker.setLatLng(inicial).bindPopup('Ubicación inicial').openPopup();
