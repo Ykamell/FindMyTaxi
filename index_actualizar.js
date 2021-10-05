@@ -15,6 +15,7 @@
 		$('input[name="datetimes"]').daterangepicker({
 			timePicker: true,
 			timePickerSeconds: true,
+			autoUpdateInput: false,
 			opens: 'right',
 			startDate: moment().startOf('hour'),
 			endDate: moment().startOf('hour').add(32, 'hour'),
