@@ -20,7 +20,9 @@
 			opens: 'right',
 			showDropdowns: true,
 			locale: {
-				format: 'YYYY-MM-DD hh:mm:ss'
+				format: 'YYYY-MM-DD hh:mm:ss',
+				applyLabel: "Buscar",
+				cancelLabel: "Cancelar"
 			},
     	  	minYear: 1901,
     		maxYear: parseInt(moment().format('YYYY'),10)
