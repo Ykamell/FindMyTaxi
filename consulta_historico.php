@@ -17,7 +17,6 @@ if(isset($_POST["startDate"]) && $_POST["endDate"]) {
 	while($consulta=mysqli_fetch_array($historical)){
 		$poly[]=array((float) $consulta['lat'],(float) $consulta['lon'],(string) $consulta['dateTime']);		
 	}
-	echo $poly[0]
 	echo json_encode($poly);
 }
 ?>
