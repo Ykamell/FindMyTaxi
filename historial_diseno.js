@@ -42,9 +42,6 @@
 				markery.setLatLng(final).bindPopup('Ubicación final').openPopup();
 				polyline.setLatLngs(latlon);
 				map.fitBounds(polyline.getBounds());	
-				if(Checkstatus.checked) {
-					map.on('click', onMapClick);	
-				}
 			});
 
 		});
